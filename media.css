@@ -1,0 +1,123 @@
+@media (min-width: 1440px) {
+    .promo{
+        height: 800px;
+    }
+}
+@media (max-width: 1024px) {
+    .nav li:not(:last-child) {
+        margin-right: 40px;
+    }
+    .plays_list ul {
+        margin-left: 0;
+    }
+    .awards > .container{
+        width: 100%;
+    }
+    .partners_content>ul li{
+        padding: 20px;
+        width: calc(25% - 40px)
+    }
+    .partners_content img{
+        width: 100%;
+    }
+    .form_container {
+        grid-template-columns: repeat(2, 180px) 260px;
+        padding-left: 90px;
+      }
+}
+@media (max-width: 768px){
+    .nav_toggle{
+        display: block;
+    }
+    .nav>ul{
+        display: none;
+    }
+    .callback_info ul{
+        align-items: center;
+    }
+    .form_container{
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+    }
+    .form_container input,
+    .form_container textarea,
+    .form_container .form_button{
+        margin-bottom: 20px;
+    }
+    .callback_wrapper{
+        flex-direction: column;
+    }
+    .awards_wrapper{
+        flex-direction: column;
+    }
+    .awards_years{
+        flex-direction: row;
+        margin: 0;
+    }
+    .awards_years span{
+        padding: 20px;
+    }
+    .awards_content{
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    .about_wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+    .about_item{
+        text-align: center;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    .about_item:first-child{
+        width: 100%;
+    }
+    .about_item:last-child img{
+        width: 100%;
+    }
+    .about_item:last-child{
+        order: -1;
+    }
+    .promo_slide .item:last-child{
+        margin: 0;
+    }
+    .promo_slide{
+        flex-direction: column;
+    }
+    .promo{
+        height: initial;
+    }
+    .promo_slide>.item:last-child{
+        order: -1;
+        margin-bottom: 50px;
+    }
+    .promo_slide_buttons{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .promo_slide>.item:first-child{
+        width: 100%;
+        text-align: center;
+    }
+    .promo_slider{
+        padding-top: 150px;
+        padding-bottom: 100px;
+    }
+}
+@media (max-width: 425px){
+    .awards_years span{
+        font-size: 40px;
+    }
+    .about_wrapper .about_item:not(:last-child){
+        padding: 0;
+    }
+    .promo_contacts{
+        display: none;
+    }
+}
+/* доделать адаптив на 425 и до 325 включительо
++ кнопку меню "бургер" и "закрыть"
+и перечекать все */

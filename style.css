@@ -67,6 +67,37 @@ h3{
     line-height: 25px;
     letter-spacing: 0.1em;
 }
+.nav_toggle{
+    display: none;
+
+}
+.nav_toggle::before{
+    content: "Меню";
+}
+.nav_toggle.active{
+    position: fixed;
+    z-index: 999;
+    top: 50px;
+    left: 200px;
+}
+.nav_toggle.active::before{
+
+    content: "Закрыть";
+}
+.nav ul.nav_toggle_active{
+    display: block !important;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #000000;
+    opacity: .5;
+    z-index: 998;
+    padding: 40px;
+}
+.nav ul.nav_toggle_active li:not(:last-child){
+    margin-bottom: 40px;
+}
 a{
     text-decoration: none;
     color: #ffffff;
@@ -110,10 +141,14 @@ a{
     padding: 30px 60px;
     transform-origin:  left top;
     transform: rotate(-90deg);
-    position: absolute;
-    left: 0;
+    position: fixed;
+    left: -80px;
     bottom: -120px;
-    width: calc(100% - 120px);
+    width: calc(100%);
+}
+.promo_contacts:hover{
+    left: 0;
+    transition: .5s;
 }
 .promo_contacts ul{
     display: flex;
@@ -122,7 +157,6 @@ a{
 }
 .promo_contacts li:not(:last-child){
     margin-right: 30px;
-
 }
 .promo_wrapper, .container{
     height: 100%;
@@ -331,38 +365,36 @@ a{
     background-color: #D1A954;
 }
 .plays_item_background:hover > .show{
-    display: block;
+    display: flex;
 }
-.show{
+.plays_list li:hover h3,
+.plays_list li:hover .plays_item-data{
+    display: none;
+}
 
+.show{
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
-/* я здесь */
 .show::before{
-    position: absolute;
+    display: block;
     content: "";
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    background-color: #fff;       
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-        /* думаю можно проще */
+    border: 5px solid white;
 }
 .show::after{
-    position: absolute;
     display: block;
     content: "";
     width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background-color: #D1A954;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    /* думаю можно проще */
+    height: 5px;
+    background-color: #fff;
+    position: absolute;
+    right: 15px;
+    bottom: 25px;
+    transform: rotate(45deg);
 }
 .awards{
     margin-bottom: 100px;
@@ -370,23 +402,24 @@ a{
 .awards_wrapper{
     position: relative;
     background-image: url('assets/award_pic.png');
-    background-size: contain;
+    background-size: cover;
     margin: 0 auto;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 550px;
 }
 .awards_content{
     display: flex;
-    align-items: center;
     justify-items: center;
+    width: 60%;
+    flex-direction: column;
 }
 .awards_content-stars{
     margin-top: 50px;
 }
 .awards_content-stars>ul{
-    position: absolute;
     display: flex;
     align-items: center;
     justify-items: center;
@@ -407,8 +440,7 @@ a{
     flex-direction: column;
     align-items: center;
     justify-items: center;
-    margin: 125px 100px 125px 190px;
-
+    margin: 0 100px 0 0;
 }
 .awards_years span{
     font-family: Open Sans Condensed;
@@ -425,7 +457,7 @@ a{
     width: 75%;
 }
 .partners{
-    margin: 0 auto;
+    margin: 0 auto 100px auto;
 }
 .partners_content{
     width: 100%;
@@ -439,9 +471,7 @@ a{
     flex-wrap: wrap;
 }
 .partners_content>ul li{
-    background-image: url('assets/partners_logo.png');
-    width: 200px;
-    height: 100px;
+    width: calc(25% - 80px);
     background-repeat: no-repeat;
     padding: 40px;
 }
@@ -463,17 +493,15 @@ a{
   }
 .form_container input{
     background-color: #444444;
-    background: #444444;
     border: 1px solid #616161;
     box-sizing: border-box;
     color: #ffffff;
 }
 .form_container input::placeholder{
-    padding: 15px;
     color: #989898;
 }
 .form_message::placeholder{
-    /* не двигается */
+    color: #989898;
 }
 .form_button>button{
     display: block;
@@ -482,18 +510,26 @@ a{
 }
 .form_name {
     grid-area: 1 / 1 / 2 / 2;
+    padding: 15px;
     }
 .form_company {
     grid-area: 1 / 2 / 2 / 3;
+    padding: 15px;
     }
 .form_message {
     grid-area: 1 / 3 / 3 / 4;
-}
+    resize: none;
+    background-color: #444444;
+    padding: 15px;
+    color: #ffffff;
+    }
 .form_phone {
     grid-area: 2 / 1 / 3 / 2;
+    padding: 15px;
 }
 .form_email {
     grid-area: 2 / 2 / 3 / 3;
+    padding: 15px;
 }
 .form_info {
     grid-area: 3 / 1 / 4 / 3;
@@ -505,6 +541,7 @@ a{
 }
 .form_button {
     grid-area: 3 / 3 / 4 / 4;
+    padding: 15px;
 }
 .callback_info{
     color: #989898;
@@ -539,9 +576,3 @@ a{
 .footer_content{
     padding: 30px;
 }
-/* 
-    форму на грид
-    и иконку с лупой
-    в чт на пары к 12
-*/
-/* левый отступ контейнера не камильфо */
