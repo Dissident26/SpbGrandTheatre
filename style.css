@@ -67,22 +67,64 @@ h3{
     line-height: 25px;
     letter-spacing: 0.1em;
 }
+.nav_toggle::before{
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 5px;
+    position: absolute;
+    background-color: #c4c4c4;
+    bottom: 50%;
+    left: 0;
+    margin-bottom: 10px;
+}
 .nav_toggle{
     display: none;
-
+    width: 35px;
+    height: 5px;
+    position: relative;
+    background-color: #c4c4c4;
+    border: none;
+    left: 0;
+    margin: 10px;
+    outline: none;
+    cursor: pointer;
 }
-.nav_toggle::before{
-    content: "Меню";
+.nav_toggle::after{
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 5px;
+    position: absolute;
+    background-color: #c4c4c4;
+    top: 50%;
+    left: 0;
+    margin-top: 10px;
 }
 .nav_toggle.active{
     position: fixed;
     z-index: 999;
-    top: 50px;
+    top: 20px;
     left: 200px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid #c4c4c4;
+
+}
+.nav_toggle.active::before, .nav_toggle.active::after{
+    position: absolute;
+    width: 39px;
+    height: 3px;
+    margin: 0;
+    left: -1.5px;
+    top: 16px;
 }
 .nav_toggle.active::before{
-
-    content: "Закрыть";
+    transform: rotate(45deg);
+}
+.nav_toggle.active::after{
+    transform: rotate(-45deg);
 }
 .nav ul.nav_toggle_active{
     display: block !important;
@@ -496,6 +538,9 @@ a{
     border: 1px solid #616161;
     box-sizing: border-box;
     color: #ffffff;
+}
+textarea{
+    border: 1px solid #616161;
 }
 .form_container input::placeholder{
     color: #989898;

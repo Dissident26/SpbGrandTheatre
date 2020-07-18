@@ -28,6 +28,8 @@
 @media (max-width: 768px){
     .nav_toggle{
         display: block;
+        position: fixed;
+        left: 30px;
     }
     .nav>ul{
         display: none;
