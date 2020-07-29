@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grand Theatre</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="media.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/media.css">
 </head>
 <body>
     <div class="site">
@@ -38,7 +38,7 @@
             </aside>
             <div class="promo_wrapper">
                 <div class="container">
-                    <div class="promo_slider">
+                    <div class="promo_slider" id="slider1">
                         <ul>
                             <li class="promo_slide">
                                 <div class="item">
@@ -48,11 +48,27 @@
                                 </div>
                                 <div class="item"><img src="assets/promo_slide1.png" alt="promo_slide"></div>
                             </li>
+                            <li class="promo_slide">
+                                <div class="item">
+                                    <h2>Lorem ipsum dolor sit amet.</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repellat eius voluptate hic. Neque odit mollitia pariatur voluptas inventore distinctio.</p>
+                                    <a class="button" href="#">Афиша</a>
+                                </div>
+                                <div class="item"><img src="assets/promo_slide1.png" alt="promo_slide"></div>
+                            </li>
+                            <li class="promo_slide">
+                                <div class="item">
+                                    <h2>Lorem ipsum dolor sit amet.</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ducimus accusamus aspernatur rerum excepturi voluptates nam sed harum hic quisquam.</p>
+                                    <a class="button" href="#">Афиша</a>
+                                </div>
+                                <div class="item"><img src="assets/promo_slide1.png" alt="promo_slide"></div>
+                            </li>
                         </ul>
                         <div class="promo_slide_buttons">
                             <div class="buttons">
-                                <button class="prev"><span class="icon_arrow icon_arrow-left"></span>Пред</button>
-                                <button class="next">След<span class="icon_arrow icon_arrow-right"></span></button>
+                                <button class="prev" id="slider1_prev"><span class="icon_arrow icon_arrow-left"></span>Пред</button>
+                                <button class="next" id="slider1_next">След<span class="icon_arrow icon_arrow-right"></span></button>
                             </div>
                         </div>
                     </div>
@@ -94,7 +110,7 @@
             <div class="section_header">
                 <h2><span class="color_gold">наши</span> постановки</h2>
             </div>
-            <div class="plays_list">
+            <div class="plays_list" id="slider2">
                 <ul>
                     <li style="background-image: url('assets/project__item_1.png');">
                     <h3>Оскар 2020</h3><div class="plays_item-data">Сентябрь 2020</div>
@@ -203,6 +219,7 @@
             </div>
         </footer>
     </div>
-    <script type="text/javascript" src="script.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
