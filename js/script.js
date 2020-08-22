@@ -10,7 +10,6 @@ window.addEventListener('load', function(){
     };
 });
 slider({element : 'slider1', type : 'slide', navigation : {next : 'slider1_next', prev : 'slider1_prev'}}); //first slider
-slider({
-    element : 'slider2',
-    type : 'scroll'
-})
+slider({element : 'slider2', type : 'scroll'});
+    //showItems('slider2');
+validateForm('form1');

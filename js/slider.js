@@ -77,7 +77,7 @@
             let animation = null;
 
             function scroll(firstSlideMarginLeft, direction) {
-                slides[0].style.marginLeft = `-${firstSlideMarginLeft + 5*(direction == 'next' ? 1 : -1)}px`;
+                slides[0].style.marginLeft = `-${firstSlideMarginLeft + 10*(direction == 'next' ? 1 : -1)}px`;
 
                 firstSlideMarginLeft = Math.abs(parseInt(slides[0].style.marginLeft));
 
@@ -90,6 +90,7 @@
 
             slider.addEventListener('mousemove', function(even) {
                 if (direction != 'next' && even.clientX >= sliderListWidth*0.8) {
+                    
                     direction = 'next';
                     if(animation) cancelAnimationFrame(animation);
                     scroll(Math.abs(parseInt(slides[0].style.marginLeft)), direction);
@@ -126,4 +127,16 @@
         };
     };
 
+    this.showItems = function (elId){   //на показ картинок
+        let element = document.querySelector(`#${elId}`);
+        element.addEventListener('click', function(event){
+            if(!event.target.classList.contains('show'))return;
+            let popUp = document.createElement('div');
+                popUp.style.position = 'absolute';
+                popUp.style.width = '800px';
+                popUp.style.height = '600px';
+                popUp.style.backgroundImage = 'url(assets/project__item_1.png)';
+            document.querySelector('.site').append(popUp)
+        });
+    };
 }());
